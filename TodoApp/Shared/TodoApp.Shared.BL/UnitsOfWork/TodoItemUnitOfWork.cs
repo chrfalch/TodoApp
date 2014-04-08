@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using TodoApp.Shared.BL.Models;
+using TodoApp.Shared.BL.Repositories;
 
 namespace TodoApp.Shared.BL.UnitsOfWork
 {
     public class TodoItemUnitOfWork: ITodoItemUnitOfWork
     {
-        private readonly IRepository<ITodoItem> _todoRepository;
+        private readonly ITodoItemRepository _todoRepository;
 
-        public TodoItemUnitOfWork(IRepository<ITodoItem> todoRepository)
+        public TodoItemUnitOfWork(ITodoItemRepository todoRepository)
         {
             _todoRepository = todoRepository;
         }

@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="TestHelpers\ListRepository.cs" />
+    <Compile Include="TestHelpers\TodoItemTestRepository.cs" />
     <Compile Include="TodoItemUnitOfWorkTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

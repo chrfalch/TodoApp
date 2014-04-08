@@ -14,7 +14,7 @@ namespace TodoApp.Shared.BL.Tests
         public void We_Get_A_Sorted_List_With_Newest_First_Of_Items_When_Calling_GetSortedItems()
         {
             // Arrange
-            var repo = new ListRepository<ITodoItem>();
+            var repo = new TodoItemTestRepository();
             repo.Add(new TodoItem(){ Date = new DateTime(2013,1,1) });
             repo.Add(new TodoItem() { Date = new DateTime(2014, 1, 1) });
 
@@ -32,7 +32,7 @@ namespace TodoApp.Shared.BL.Tests
         public void We_Get_A_New_TodoItem_When_Calling_CreateTodoItem()
         {
             // Arrange
-            var repo = new ListRepository<ITodoItem>();
+            var repo = new TodoItemTestRepository();
             var unitOfWork = new TodoItemUnitOfWork(repo);
 
             // Act
