@@ -7,7 +7,7 @@ using TodoApp.Shared.BL.Models;
 
 namespace TodoApp.Shared.BL.Repositories
 {
-    public interface ITodoItemRepository: IUnitOfWork
+    public interface ITodoItemRepository: IRepository<ITodoItem>
     {        
     }
 }
