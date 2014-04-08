@@ -14,6 +14,12 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
+    <UserControl.Resources>
+        <DataTemplate x:Key="TodoItemTemplate">
+            <TextBlock Text="{Binding Text}" Margin="12,6,6,6"></TextBlock>
+        </DataTemplate>
+    </UserControl.Resources>
+        
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
@@ -30,9 +36,16 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 		   <StackPanel>
-			<TextBox Text="{Binding Hello, Mode=TwoWay}" />
-			<TextBlock Text="{Binding Hello}" />
-            <ListBox ItemsSource="{Binding Items}"></ListBox>
+               <Grid>
+                   <Grid.ColumnDefinitions>
+                       <ColumnDefinition Width="85*"></ColumnDefinition>
+                       <ColumnDefinition Width="15*"></ColumnDefinition>
+                   </Grid.ColumnDefinitions>
+                    <TextBox Text="{Binding NewTodoItemText, Mode=TwoWay}" />
+                    <Button Content="+" FontSize="28" Command="{Binding AddTodoItemCommand}" Grid.Column="1"></Button>
+                </Grid>
+                <ListBox ItemsSource="{Binding Items, Mode=TwoWay}" 
+                         ItemTemplate="{StaticResource TodoItemTemplate}"></ListBox>
 		   </StackPanel>
         </Grid>
     </Grid>
