@@ -3,36 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cirrious.MvvmCross.Community.Plugins.Sqlite;
 using TodoApp.Shared.BL;
+using TodoApp.Shared.BL.Models;
 
 namespace TodoApp.Clients.Core.Repositories
 {
-    public class Repository<T>: IRepository<T> where T: IModel
+    public class Repository<TModel, TInterface> : IRepository<TInterface>
+        where TModel : BaseModel, TInterface, new()
+        where TInterface: IModel
     {
-        public IQueryable<T> Items()
+        protected readonly ISQLiteConnection Connection;
+
+        public Repository(ISQLiteConnectionFactory factory): base()
         {
-            throw new NotImplementedException();
+            Connection = factory.Create("todoitem.sqlite");
+
+            Connection.CreateTable<TModel>();
         }
 
-        public void Add(T entity)
+        public IQueryable<TInterface> Items()
         {
-            throw new NotImplementedException();
+            return Connection.Table<TModel>().AsQueryable();
         }
 
-        public void Remove(T entity)
+        public void Add(TInterface entity)
         {
-            throw new NotImplementedException();
+            Connection.Insert(entity);
         }
 
-        public void Update(T entity)
+        public void Remove(TInterface entity)
         {
-            throw new NotImplementedException();
+            Connection.Delete(entity);
         }
 
-        public int Count { get; private set; }
-        public T GetById(string id)
+        public void Update(TInterface entity)
         {
-            throw new NotImplementedException();
+            Connection.Update(entity);
+        }
+
+        public int Count
+        {
+            get { return Connection.Table<TModel>().Count(); }
+        }
+
+        public TInterface GetById(string id)
+        {
+            return Items().FirstOrDefault(m => m.Id.Equals(id));
         }
     }
 }

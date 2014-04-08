@@ -105,6 +105,7 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Setup.cs" />
+    <Compile Include="swp8\Bootstrap\CommunitySqlitePluginBootstrap.cs" />
     <Compile Include="Views\TodoItemsView.xaml.cs">
       <DependentUpon>TodoItemsView.xaml</DependentUpon>
     </Compile>
@@ -168,11 +169,20 @@
     <Reference Include="Cirrious.MvvmCross">
       <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.2-beta1\lib\wp8\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite">
+      <HintPath>..\..\packages\MvvmCross.Community.Plugin.Sqlite.3.1.1\lib\wp8\Cirrious.MvvmCross.Community.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite.WindowsPhone">
+      <HintPath>..\..\packages\MvvmCross.Community.Plugin.Sqlite.3.1.1\lib\wp8\Cirrious.MvvmCross.Community.Plugins.Sqlite.WindowsPhone.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.1.2-beta1\lib\wp8\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.WindowsPhone">
       <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.2-beta1\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Community.CsharpSqlite.WP7">
+      <HintPath>..\..\packages\MvvmCross.Community.Plugin.Sqlite.3.1.1\lib\wp8\Community.CsharpSqlite.WP7.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

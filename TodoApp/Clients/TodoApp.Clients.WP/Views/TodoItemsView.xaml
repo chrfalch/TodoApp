@@ -32,6 +32,7 @@
 		   <StackPanel>
 			<TextBox Text="{Binding Hello, Mode=TwoWay}" />
 			<TextBlock Text="{Binding Hello}" />
+            <ListBox ItemsSource="{Binding Items}"></ListBox>
 		   </StackPanel>
         </Grid>
     </Grid>
