@@ -14,5 +14,12 @@ namespace TodoApp.Shared.BL.UnitsOfWork
         /// </summary>
         /// <returns></returns>
         IEnumerable<ITodoItem> GetSortedItems();
+
+        /// <summary>
+        /// Create a new Todoitem
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        ITodoItem CreateTodoItem(string text);
     }
 }

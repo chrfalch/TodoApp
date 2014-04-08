@@ -27,5 +27,19 @@ namespace TodoApp.Shared.BL.Tests
             Assert.AreEqual(new DateTime(2014, 1, 1), items.ElementAt(0).Date);
             Assert.AreEqual(new DateTime(2013, 1, 1), items.ElementAt(1).Date);
         }
+
+        [TestMethod]
+        public void We_Get_A_New_TodoItem_When_Calling_CreateTodoItem()
+        {
+            // Arrange
+            var repo = new ListRepository<ITodoItem>();
+            var unitOfWork = new TodoItemUnitOfWork(repo);
+
+            // Act
+            var newItem = unitOfWork.CreateTodoItem("Test");
+
+            // Arrange
+            Assert.IsNotNull(newItem);
+        }
     }
 }
