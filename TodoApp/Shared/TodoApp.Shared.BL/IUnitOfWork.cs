@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace TodoApp.Shared.BL
 {
     public interface IUnitOfWork
-    {
-        void Save();
+    {       
     }
 }
