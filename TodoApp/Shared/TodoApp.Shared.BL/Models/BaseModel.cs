@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TodoApp.Shared.BL
+namespace TodoApp.Shared.BL.Models
 {
-    public interface IUnitOfWork
+    public class BaseModel: IModel
     {
-        void Save();
+        public virtual string Id { get; set; }
     }
 }

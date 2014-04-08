@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace TodoApp.Shared.BL
 {
 
-    public interface IRepository<T> where T : IModel, new()
+    public interface IRepository<T> where T : IModel
     {
-        T CreateWithDefaults();
+        IQueryable<T> Items(); 
         void Add(T entity);
         void Remove(T entity);
         void Update(T entity);
         int Count { get; }
-
+        T GetById(string id);
     }
 }
