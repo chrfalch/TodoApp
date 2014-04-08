@@ -10,5 +10,7 @@ namespace TodoApp.Shared.BL.Models
     {
         string Text { get; set; }
         bool Completed { get; set; }
+
+        DateTime Date { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace TodoApp.Shared.BL.Models
     {        
         public virtual string Text { get; set; }
         public virtual bool Completed { get; set; }
+        public DateTime Date { get; set; }
     }
 }
