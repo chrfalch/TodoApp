@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginBottom="52.3dp">
+        <EditText
+            android:textSize="40dp"
+            android:id="@+id/editText1"
+            local:MvxBind="Text NewTodoItemText"
+            android:layout_width="295.6dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:text="+"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            local:MvxBind="Click AddTodoItemCommand"
+            android:id="@+id/button1" />
+    </LinearLayout>
+    <Mvx.MvxListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        local:MvxBind="ItemsSource Items"
+        local:MvxItemTemplate="@layout/list_todoitem" />
+</LinearLayout>

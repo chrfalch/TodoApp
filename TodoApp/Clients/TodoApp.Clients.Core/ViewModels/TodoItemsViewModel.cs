@@ -17,9 +17,9 @@ namespace TodoApp.Clients.Core.ViewModels
             _todoItemUnitOfWork = todoItemUnitOfWork;
         }
 
-        public IEnumerable<ITodoItem> Items
+		public ObservableCollection<ITodoItem> Items
         {
-            get { return new List<ITodoItem>(_todoItemUnitOfWork.GetSortedItems()); }
+			get { return new ObservableCollection<ITodoItem>(_todoItemUnitOfWork.GetSortedItems()); }
         }
 
         public string NewTodoItemText
