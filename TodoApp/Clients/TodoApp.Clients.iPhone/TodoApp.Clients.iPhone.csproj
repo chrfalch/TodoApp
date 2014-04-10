@@ -117,6 +117,7 @@
     <Reference Include="Cirrious.MvvmCross.Community.Plugins.Sqlite.Touch">
       <HintPath>..\..\packages\MvvmCross.Community.Plugin.Sqlite.3.1.1\lib\MonoTouch\Cirrious.MvvmCross.Community.Plugins.Sqlite.Touch.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
